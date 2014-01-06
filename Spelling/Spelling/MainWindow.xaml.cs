@@ -28,9 +28,7 @@ namespace Matt40k.Spelling
         private Thickness tbThickness = new Thickness(0, 0, 25, 0);
         private Thickness tbNoneThickness = new Thickness(0, 0, 0, 0);
 
-        //private string _word = "spelling";
         private int _wordLen = 8;
-        private string _wordPic;
 
         public MainWindow()
         {
@@ -42,7 +40,6 @@ namespace Matt40k.Spelling
             {
                 logic.GetRandomWord();
                 _wordLen = logic.GetWordLength;
-                _wordPic = logic.GetWordPicturePath;
             }
             else
             {
@@ -220,15 +217,8 @@ namespace Matt40k.Spelling
 
         private void LoadWordPicture()
         {
-            if (string.IsNullOrEmpty(_wordPic))
-            {
-                // Word Picture not set
-            }
-            else
-            {
-                this.wordPicture.Source = logic.GetWordPicture;
-                this.wordPicture.Margin = new Thickness(0, 0, 0, 100);
-            }
+            this.wordPicture.Source = logic.GetWordPicture;
+            this.wordPicture.Margin = new Thickness(0, 0, 0, 100);
         }
     }
 }

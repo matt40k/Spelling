@@ -20,6 +20,7 @@ namespace Matt40k.Spelling
     {
         private int? _validMaxLength = 5;
         private string _currentWord;
+        private string _currentWordPath;
 
         public int? SetMaxLength
         {
@@ -220,11 +221,9 @@ namespace Matt40k.Spelling
                     {
                         if (IsValidFileType(_file))
                         {
-                            string _word = GetWordNameFromFilename(_file);
-                            if (IsValidWord(GetWordNameFromFilename(_word)))
+                            if (IsValidWord(GetWordNameFromFilename(_file)))
                             {
-                                //files.Add(_word);
-                                unduplicatedFiles.Add(_word);
+                                unduplicatedFiles.Add(_file);
                                 filesCnt = filesCnt + 1;
                             }
                         }
@@ -265,15 +264,18 @@ namespace Matt40k.Spelling
 
         public void GetRandomWord()
         {
+            Random rnd = new Random();
             List<string> tmp = GetFiles;
-            _currentWord = GetWordNameFromFilename(tmp[0]);
+            int index = rnd.Next(0, tmp.Count);
+            _currentWord = GetWordNameFromFilename(tmp[index]);
+            _currentWordPath = tmp[index];
         }
 
         public string GetWordPicturePath
         {
             get
             {
-                return Path.Combine(GetSelectedFolder, (_currentWord + ".png"));
+                return _currentWordPath;
             }
         }
 
@@ -283,7 +285,7 @@ namespace Matt40k.Spelling
             {
                 BitmapImage bi = new BitmapImage();
                 bi.BeginInit();
-                bi.UriSource = new Uri(GetWordPicturePath, UriKind.RelativeOrAbsolute);
+                bi.UriSource = new Uri(_currentWordPath, UriKind.RelativeOrAbsolute);
                 bi.EndInit();
                 return bi;
             }
