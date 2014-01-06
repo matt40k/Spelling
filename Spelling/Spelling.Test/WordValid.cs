@@ -25,11 +25,31 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordValid_IsNotValid_TooLong()
         {
-            string validWord = "supercalifragilisticexpialidocious";
+            string invalidWord = "supercalifragilisticexpialidocious";
 
             Logic logic = new Logic();
-            bool wordValid = logic.IsValidWord(validWord);
-            Assert.AreEqual(false, wordValid, "Word is not validating correctly!");
+            bool wordValid = logic.IsValidWord(invalidWord);
+            Assert.AreEqual(false, wordValid, "Word is too long!");
+        }
+
+        [TestMethod]
+        public void WordValid_IsNotValid_ContainsNumbers()
+        {
+            string invalidWord = "qwe123";
+
+            Logic logic = new Logic();
+            bool wordValid = logic.IsValidWord(invalidWord);
+            Assert.AreEqual(false, wordValid, "Word contains numbers!");
+        }
+
+        [TestMethod]
+        public void WordValid_IsNotValid_ContainsSpecialCharacters()
+        {
+            string invalidWord = "Sup3rM@n";
+
+            Logic logic = new Logic();
+            bool wordValid = logic.IsValidWord(invalidWord);
+            Assert.AreEqual(false, wordValid, "Word contains numbers!");
         }
     }
 }
