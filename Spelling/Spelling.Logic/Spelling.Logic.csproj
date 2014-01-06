@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Matt40k.Spelling.Logic</RootNamespace>
-    <AssemblyName>Matt40k.Spelling.Logic</AssemblyName>
+    <AssemblyName>Spelling.Logic</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
