@@ -220,5 +220,11 @@ namespace Matt40k.Spelling
             this.wordPicture.Source = logic.GetWordPicture;
             this.wordPicture.Margin = new Thickness(0, 0, 0, 100);
         }
+
+        private void Letter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.Key < Key.A) || (e.Key > Key.Z))
+                e.Handled = true;
+        }
     }
 }

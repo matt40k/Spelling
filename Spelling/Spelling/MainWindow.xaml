@@ -23,20 +23,22 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
         <Image Name="wordPicture" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="11"/>
-        <TextBox Name="Letter1" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="0" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter2" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="1" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter3" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="2" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter4" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="3" Visibility="Hidden" Grid.Row="1" />
 
-        <TextBox Name="Letter5" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="4" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter6" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="5" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter7" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="6" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter8" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="7" Visibility="Hidden" Grid.Row="1" />
+        <TextBox Name="Letter1" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="0" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter2" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="1" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter3" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="2" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter4" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="3" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
 
-        <TextBox Name="Letter9" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="8" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter10" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="9" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter11" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="10" Visibility="Hidden" Grid.Row="1" />
-        <TextBox Name="Letter12" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="11" Visibility="Hidden" Grid.Row="1" />
+        <TextBox Name="Letter5" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="4" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter6" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="5" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter7" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="6" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter8" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="7" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+
+        <TextBox Name="Letter9" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="8" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter10" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="9" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter11" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="10" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
+        <TextBox Name="Letter12" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="11" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" CharacterCasing="Upper" />
     </Grid>
 </Window>
