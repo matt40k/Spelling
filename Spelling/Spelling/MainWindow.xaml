@@ -42,8 +42,8 @@
         <TextBox Name="Letter10" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="9" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" TextChanged="Letter_TextChanged" CharacterCasing="Upper" />
         <TextBox Name="Letter11" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="10" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" TextChanged="Letter_TextChanged" CharacterCasing="Upper" />
         <TextBox Name="Letter12" Margin="0,0,20,0" Height="100" Width="100" FontSize="80" Grid.Column="11" Visibility="Hidden" Grid.Row="1" HorizontalContentAlignment="Center" MaxLength="1" KeyDown="Letter_KeyDown" TextChanged="Letter_TextChanged" CharacterCasing="Upper" />
-        
-        <Button Name="revealButton" Margin="0,100,0,0" Content="Reveal"  Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="11" Height="50" Width="200" Click="revealButton_Click" />
-        <Button Name="nextButton" Margin="0,50,0,0" Content="Next"  Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="11" Height="50" Width="200" Click="nextButton_Click" />
+
+        <Button Name="revealButton" Margin="0,100,0,0" Content="Reveal"  FontSize="24" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="11" Height="50" Width="200" Click="revealButton_Click" />
+        <Button Name="nextButton" Margin="0,50,0,0" Content="Next"  FontSize="24" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="11" Height="50" Width="200" Click="nextButton_Click" />
     </Grid>
 </Window>

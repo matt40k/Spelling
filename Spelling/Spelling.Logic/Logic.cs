@@ -183,7 +183,7 @@ namespace Matt40k.Spelling
         private List<string> files = new List<string>();
         private string selectedFolder = null;
         private string selected = null;
-        private string defaultSelected = "MagicKey";
+        private string defaultSelected = null; // = "MagicKey";
         private int filesCnt = 0;
 
         public List<string> GetFolders
@@ -205,7 +205,7 @@ namespace Matt40k.Spelling
                     folders = new List<string>(Directory.EnumerateDirectories(GetUserStorageFolder));
                 if (folders.Count == 1)
                 {
-                    selected = defaultSelected;
+                    selected = folders[0];
                     return true;
                 }
                 return false;
