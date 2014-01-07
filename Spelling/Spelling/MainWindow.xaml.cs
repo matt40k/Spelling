@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-
 using System.IO;
 
 namespace Matt40k.Spelling
@@ -335,6 +333,7 @@ namespace Matt40k.Spelling
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
+            playSimpleSound();
             SelectFolderUI(false);
 
             logic.GetRandomWord();
@@ -355,7 +354,9 @@ namespace Matt40k.Spelling
                 if (IsValid)
                     this.Letter1.Background = Brushes.Green;
                 else
+                {
                     this.Letter1.ClearValue(TextBox.BackgroundProperty);
+                }
             }
 
             if (len >= 2)
