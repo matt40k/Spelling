@@ -22,6 +22,9 @@ namespace Matt40k.Spelling
         private string _currentWord;
         private string _currentWordPath;
 
+        public enum LetterTypes { Lower, Upper, Camel };
+        private LetterTypes _currentLetterType = LetterTypes.Upper;
+
         public int? SetMaxLength
         {
             set
@@ -269,6 +272,7 @@ namespace Matt40k.Spelling
             int index = rnd.Next(0, tmp.Count);
             _currentWord = GetWordNameFromFilename(tmp[index]);
             _currentWordPath = tmp[index];
+            ConvertToCurrentLetterType(_currentWord);
         }
 
         public string GetWordPicturePath
@@ -288,6 +292,60 @@ namespace Matt40k.Spelling
                 bi.UriSource = new Uri(_currentWordPath, UriKind.RelativeOrAbsolute);
                 bi.EndInit();
                 return bi;
+            }
+        }
+
+        public string RevealLetter(int letterNo)
+        {
+            string letter = _currentWord.Substring((letterNo - 1), 1);
+            return letter;
+        }
+
+        public bool IsLetterCorrect(string Letter, int LetterNo)
+        {
+            string correctLetter = _currentWord.Substring((LetterNo - 1), 1);
+            if (Letter.ToUpper() == correctLetter.ToUpper())
+                return true;
+            else
+                return false;
+        }
+
+        public void ConvertToCurrentLetterType(string word)
+        {
+            string wordConverted;
+
+            switch(_currentLetterType)
+            {
+                case LetterTypes.Upper:
+                    wordConverted = NameToUpper(word);
+                    break;
+                case LetterTypes.Lower:
+                   wordConverted = NameToLower(word);
+                    break;
+                case LetterTypes.Camel:
+                    wordConverted = NameToCamel(word);
+                    break;
+                default:
+                    wordConverted = word;
+                    break;
+            }
+            _currentWord = wordConverted;
+        }
+
+        public LetterTypes SetLetterType
+        {
+            set
+            {
+                _currentLetterType = value;
+                ConvertToCurrentLetterType(_currentWord);
+            }
+        }
+
+        public LetterTypes GetLetterType
+        {
+            get
+            {
+                return _currentLetterType;
             }
         }
     }

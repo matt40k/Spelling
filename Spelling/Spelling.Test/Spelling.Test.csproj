@@ -61,7 +61,6 @@
     <Compile Include="WordCase.cs" />
     <Compile Include="WordIsOnlyCharacters.cs" />
     <Compile Include="WordNameFromFilename.cs" />
-    <Compile Include="WordLength.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordValid.cs" />
   </ItemGroup>
