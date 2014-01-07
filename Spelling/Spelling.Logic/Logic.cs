@@ -254,7 +254,15 @@ namespace Matt40k.Spelling
             {
                 if (selectedFolder == null)
                     return Path.Combine(GetUserStorageFolder, GetSelected);
-                return null;
+                return Path.Combine(GetUserStorageFolder, selectedFolder);
+            }
+        }
+
+        public string SetSelectedFolder
+        {
+            set
+            {
+                selectedFolder = value;
             }
         }
 

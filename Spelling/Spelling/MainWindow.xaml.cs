@@ -495,5 +495,10 @@ namespace Matt40k.Spelling
                 this.revealButton.Visibility = Visibility.Visible;
             }
         }
+
+        private void folderComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            logic.SetSelectedFolder = folderComboBox.SelectedValue.ToString();
+        }
     }
 }
