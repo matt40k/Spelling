@@ -21,6 +21,13 @@ namespace Matt40k.Spelling
         private int? _validMaxLength = 5;
         private string _currentWord;
         private string _currentWordPath;
+        private string _AppFolder = "Spelling";
+        private List<string> folders = null;
+        private List<string> files = new List<string>();
+        private string selectedFolder = null;
+        private string selected = null;
+        private string defaultSelected = "The Magic Key";
+        private int filesCnt = 0;
 
         public enum LetterTypes { Lower, Upper, Camel };
         private LetterTypes _currentLetterType = LetterTypes.Upper;
@@ -168,8 +175,6 @@ namespace Matt40k.Spelling
             }
         }
 
-        private string _AppFolder = "Spelling";
-
         private string GetUserStorageFolder
         {
             get
@@ -179,21 +184,20 @@ namespace Matt40k.Spelling
             }
         }
 
-        private List<string> folders = null;
-        private List<string> files = new List<string>();
-        private string selectedFolder = null;
-        private string selected = null;
-        private string defaultSelected = null; // = "MagicKey";
-        private int filesCnt = 0;
-
-        public List<string> GetFolders
+        public List<string> GetFolderNames
         {
             get
             {
                 if (folders == null)
                     folders = new List<string>(Directory.EnumerateDirectories(GetUserStorageFolder));
 
-                return folders;
+                List<string> folderNames = new List<string>();
+                foreach (var folder in folders)
+                {
+                    folderNames.Add(Path.GetFileName(folder));
+                }
+
+                return folderNames;
             }
         }
 

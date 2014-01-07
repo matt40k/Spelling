@@ -38,16 +38,18 @@ namespace Matt40k.Spelling
             logic = new Logic();
             if (logic.HasOnlyOneFolder)
             {
+                SelectFolderUI(false);
                 logic.GetRandomWord();
                 _wordLen = logic.GetWordLength;
+
+                SetUIBoxes(_wordLen);
+                LoadWordPicture();
             }
             else
             {
-                // TODO
+                this.folderComboBox.ItemsSource = logic.GetFolderNames;
+                SelectFolderUI(true);
             }
-
-            SetUIBoxes(_wordLen);
-            LoadWordPicture();
         }
 
         private void SetUIBoxes(int len)
@@ -333,6 +335,8 @@ namespace Matt40k.Spelling
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
+            SelectFolderUI(false);
+
             logic.GetRandomWord();
             _wordLen = logic.GetWordLength;
 
@@ -470,6 +474,26 @@ namespace Matt40k.Spelling
         private void Letter_TextChanged(object sender, TextChangedEventArgs e)
         {
             Validation();
+        }
+
+        public List<string> FolderList
+        {
+            get;
+            set;
+        }
+
+        private void SelectFolderUI(bool value)
+        {
+            if (value)
+            {
+                this.folderComboBox.Visibility = Visibility.Visible;
+                this.revealButton.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                this.folderComboBox.Visibility = Visibility.Hidden;
+                this.revealButton.Visibility = Visibility.Visible;
+            }
         }
     }
 }
