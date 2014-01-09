@@ -7,7 +7,6 @@
  *   LICENSE.TXT at the root directory of the distribution.
  */
 
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Matt40k.Spelling.Test
@@ -21,7 +20,7 @@ namespace Matt40k.Spelling.Test
             string fileName = "dad.png";
             string validFileName = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);
             Assert.AreEqual(wordFileName, validFileName, "Word name from Filename is not working correctly!");
         }
@@ -32,7 +31,7 @@ namespace Matt40k.Spelling.Test
             string fileName = "dad";
             string validFileName = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);
             Assert.AreEqual(wordFileName, validFileName, "Word name from Filename is not working correctly!");
         }
@@ -43,7 +42,7 @@ namespace Matt40k.Spelling.Test
             string fileName = @"c:\tmp\dad";
             string validFileName = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);
             Assert.AreEqual(wordFileName, validFileName, "Word name from Filename is not working correctly!");
         }
@@ -54,7 +53,7 @@ namespace Matt40k.Spelling.Test
             string fileName = @"c:\tmp\dad.png";
             string validFileName = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);
             Assert.AreEqual(wordFileName, validFileName, "Word name from Filename is not working correctly!");
         }

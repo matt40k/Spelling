@@ -13,28 +13,31 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.Windows.Media.Imaging;
 
 namespace Matt40k.Spelling
 {
     public class Logic
     {
-        private int? _validMaxLength = 5;
+        public enum LetterTypes
+        {
+            Lower,
+            Upper,
+            Camel
+        };
+
+        private string _AppFolder = "Spelling";
+        private LetterTypes _currentLetterType = LetterTypes.Upper;
+
         private string _currentWord;
         private string _currentWordPath;
-        private string _AppFolder = "Spelling";
-        private List<string> folders = null;
-        private List<string> files = new List<string>();
-        private string selectedFolder = null;
-        private string selected = null;
+        private int? _validMaxLength = 5;
         private string defaultSelected = "The Magic Key";
-        private int filesCnt = 0;
-
-        public enum LetterTypes { Lower, Upper, Camel };
-        private LetterTypes _currentLetterType = LetterTypes.Upper;
+        private List<string> files = new List<string>();
+        private int filesCnt;
+        private List<string> folders;
+        private string selected;
+        private string selectedFolder;
 
         public int? SetMaxLength
         {
@@ -59,10 +62,7 @@ namespace Matt40k.Spelling
                 {
                     return 5;
                 }
-                else
-                {
-                    return _validMaxLength;
-                }
+                return _validMaxLength;
             }
         }
 
@@ -77,6 +77,138 @@ namespace Matt40k.Spelling
                 // Get the word length
                 return _currentWord.Length;
             }
+        }
+
+        private string getMyDocuments
+        {
+            get
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                return path;
+            }
+        }
+
+        private string GetUserStorageFolder
+        {
+            get
+            {
+                string path = Path.Combine(getMyDocuments, _AppFolder);
+                return path;
+            }
+        }
+
+        public List<string> GetFolderNames
+        {
+            get
+            {
+                if (folders == null)
+                    folders = new List<string>(Directory.EnumerateDirectories(GetUserStorageFolder));
+
+                var folderNames = new List<string>();
+                foreach (string folder in folders)
+                {
+                    folderNames.Add(Path.GetFileName(folder));
+                }
+
+                return folderNames;
+            }
+        }
+
+        public bool HasOnlyOneFolder
+        {
+            get
+            {
+                if (folders == null)
+                    folders = new List<string>(Directory.EnumerateDirectories(GetUserStorageFolder));
+                if (folders.Count == 1)
+                {
+                    selected = folders[0];
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private List<string> GetFiles
+        {
+            get
+            {
+                if (files.Count == 0)
+                {
+                    var uncheckedFiles = new List<string>(Directory.EnumerateFiles(GetSelectedFolder));
+                    var unduplicatedFiles = new List<string>();
+                    foreach (string _file in uncheckedFiles)
+                    {
+                        if (IsValidFileType(_file))
+                        {
+                            if (IsValidWord(GetWordNameFromFilename(_file)))
+                            {
+                                unduplicatedFiles.Add(_file);
+                                filesCnt = filesCnt + 1;
+                            }
+                        }
+                    }
+
+                    files = unduplicatedFiles.Distinct().ToList();
+                }
+                return files;
+            }
+        }
+
+        private string GetSelectedFolder
+        {
+            get
+            {
+                if (selectedFolder == null)
+                    return Path.Combine(GetUserStorageFolder, GetSelected);
+                return Path.Combine(GetUserStorageFolder, selectedFolder);
+            }
+        }
+
+        public string SetSelectedFolder
+        {
+            set { selectedFolder = value; }
+        }
+
+        private string GetSelected
+        {
+            get
+            {
+                if (selected == null)
+                    return defaultSelected;
+                return selected;
+            }
+        }
+
+        public string GetWordPicturePath
+        {
+            get { return _currentWordPath; }
+        }
+
+        public BitmapImage GetWordPicture
+        {
+            get
+            {
+                var bi = new BitmapImage();
+                bi.BeginInit();
+                bi.UriSource = new Uri(_currentWordPath, UriKind.RelativeOrAbsolute);
+                bi.EndInit();
+                return bi;
+            }
+        }
+
+        public LetterTypes SetLetterType
+        {
+            set
+            {
+                _currentLetterType = value;
+                ConvertToCurrentLetterType(_currentWord);
+            }
+        }
+
+        public LetterTypes GetLetterType
+        {
+            get { return _currentLetterType; }
         }
 
         private int? getWordLength(string _word)
@@ -167,83 +299,7 @@ namespace Matt40k.Spelling
                 return upperLower;
             }
             // Character is singular letter, not a word, so if you passed a word, fall
-            throw new System.ArgumentException("Character length cannot be greater then one");
-        }
-
-        private string getMyDocuments
-        {
-            get
-            {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                return path;
-            }
-        }
-
-        private string GetUserStorageFolder
-        {
-            get
-            {
-                string path = Path.Combine(getMyDocuments, _AppFolder);
-                return path;
-            }
-        }
-
-        public List<string> GetFolderNames
-        {
-            get
-            {
-                if (folders == null)
-                    folders = new List<string>(Directory.EnumerateDirectories(GetUserStorageFolder));
-
-                List<string> folderNames = new List<string>();
-                foreach (var folder in folders)
-                {
-                    folderNames.Add(Path.GetFileName(folder));
-                }
-
-                return folderNames;
-            }
-        }
-
-        public bool HasOnlyOneFolder
-        {
-            get
-            {
-                if (folders == null)
-                    folders = new List<string>(Directory.EnumerateDirectories(GetUserStorageFolder));
-                if (folders.Count == 1)
-                {
-                    selected = folders[0];
-                    return true;
-                }
-                return false;
-            }
-        }
-
-        private List<string> GetFiles
-        {
-            get
-            {
-                if (files.Count == 0)
-                {
-                    List<string> uncheckedFiles = new List<string>(Directory.EnumerateFiles(GetSelectedFolder));
-                    List<string> unduplicatedFiles = new List<string>();
-                    foreach (var _file in uncheckedFiles)
-                    {
-                        if (IsValidFileType(_file))
-                        {
-                            if (IsValidWord(GetWordNameFromFilename(_file)))
-                            {
-                                unduplicatedFiles.Add(_file);
-                                filesCnt = filesCnt + 1;
-                            }
-                        }
-                    }
-
-                    files = unduplicatedFiles.Distinct().ToList();
-                }
-                return files;
-            }
+            throw new ArgumentException("Character length cannot be greater then one");
         }
 
         private void ResetFiles()
@@ -252,63 +308,14 @@ namespace Matt40k.Spelling
             filesCnt = 0;
         }
 
-        private string GetSelectedFolder
-        {
-            get
-            {
-                if (selectedFolder == null)
-                    return Path.Combine(GetUserStorageFolder, GetSelected);
-                return Path.Combine(GetUserStorageFolder, selectedFolder);
-            }
-        }
-
-        public string SetSelectedFolder
-        {
-            set
-            {
-                selectedFolder = value;
-            }
-        }
-
-        private string GetSelected
-        {
-            get
-            {
-                if (selected == null)
-                    return defaultSelected;
-                else
-                    return selected;
-            }
-        }
-
         public void GetRandomWord()
         {
-            Random rnd = new Random();
+            var rnd = new Random();
             List<string> tmp = GetFiles;
             int index = rnd.Next(0, tmp.Count);
             _currentWord = GetWordNameFromFilename(tmp[index]);
             _currentWordPath = tmp[index];
             ConvertToCurrentLetterType(_currentWord);
-        }
-
-        public string GetWordPicturePath
-        {
-            get
-            {
-                return _currentWordPath;
-            }
-        }
-
-        public BitmapImage GetWordPicture
-        {
-            get
-            {
-                BitmapImage bi = new BitmapImage();
-                bi.BeginInit();
-                bi.UriSource = new Uri(_currentWordPath, UriKind.RelativeOrAbsolute);
-                bi.EndInit();
-                return bi;
-            }
         }
 
         public string RevealLetter(int letterNo)
@@ -322,21 +329,20 @@ namespace Matt40k.Spelling
             string correctLetter = _currentWord.Substring((LetterNo - 1), 1);
             if (Letter.ToUpper() == correctLetter.ToUpper())
                 return true;
-            else
-                return false;
+            return false;
         }
 
         public void ConvertToCurrentLetterType(string word)
         {
             string wordConverted;
 
-            switch(_currentLetterType)
+            switch (_currentLetterType)
             {
                 case LetterTypes.Upper:
                     wordConverted = NameToUpper(word);
                     break;
                 case LetterTypes.Lower:
-                   wordConverted = NameToLower(word);
+                    wordConverted = NameToLower(word);
                     break;
                 case LetterTypes.Camel:
                     wordConverted = NameToCamel(word);
@@ -346,23 +352,6 @@ namespace Matt40k.Spelling
                     break;
             }
             _currentWord = wordConverted;
-        }
-
-        public LetterTypes SetLetterType
-        {
-            set
-            {
-                _currentLetterType = value;
-                ConvertToCurrentLetterType(_currentWord);
-            }
-        }
-
-        public LetterTypes GetLetterType
-        {
-            get
-            {
-                return _currentLetterType;
-            }
         }
     }
 }

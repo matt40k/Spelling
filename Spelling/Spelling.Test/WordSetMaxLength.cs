@@ -7,7 +7,6 @@
  *   LICENSE.TXT at the root directory of the distribution.
  */
 
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Matt40k.Spelling.Test
@@ -18,7 +17,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordSetMaxLength_SetNull()
         {
-            Logic logic = new Logic();
+            var logic = new Logic();
             logic.SetMaxLength = null;
             Assert.AreEqual(5, logic.GetMaxLength, "Word max length cannot be null!");
         }
@@ -26,7 +25,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordSetMaxLength_SetZero()
         {
-            Logic logic = new Logic();
+            var logic = new Logic();
             logic.SetMaxLength = 0;
             Assert.AreEqual(5, logic.GetMaxLength, "Word max length cannot be zero!");
         }
@@ -34,7 +33,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordSetMaxLength_SetTwo()
         {
-            Logic logic = new Logic();
+            var logic = new Logic();
             logic.SetMaxLength = 2;
             Assert.AreEqual(2, logic.GetMaxLength, "Word max length should be 2!");
         }
@@ -42,7 +41,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordSetMaxLength_SetFive()
         {
-            Logic logic = new Logic();
+            var logic = new Logic();
             logic.SetMaxLength = 5;
             Assert.AreEqual(5, logic.GetMaxLength, "Word length should be 5!");
         }
@@ -50,7 +49,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordSetMaxLength_SetTwelve()
         {
-            Logic logic = new Logic();
+            var logic = new Logic();
             logic.SetMaxLength = 12;
             Assert.AreEqual(12, logic.GetMaxLength, "Word length should be 12!");
         }

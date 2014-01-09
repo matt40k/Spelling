@@ -7,9 +7,7 @@
  *   LICENSE.TXT at the root directory of the distribution.
  */
 
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Matt40k.Spelling;
 
 namespace Matt40k.Spelling.Test
 {
@@ -21,7 +19,7 @@ namespace Matt40k.Spelling.Test
         {
             string validWord = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool wordValid = logic.IsValidWord(validWord);
             Assert.AreEqual(true, wordValid, "Word is not validating correctly!");
         }
@@ -31,7 +29,7 @@ namespace Matt40k.Spelling.Test
         {
             string invalidWord = "supercalifragilisticexpialidocious";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool wordValid = logic.IsValidWord(invalidWord);
             Assert.AreEqual(false, wordValid, "Word is too long!");
         }
@@ -41,7 +39,7 @@ namespace Matt40k.Spelling.Test
         {
             string invalidWord = "qwe123";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool wordValid = logic.IsValidWord(invalidWord);
             Assert.AreEqual(false, wordValid, "Word contains numbers!");
         }
@@ -51,7 +49,7 @@ namespace Matt40k.Spelling.Test
         {
             string invalidWord = "Sup3rM@n";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool wordValid = logic.IsValidWord(invalidWord);
             Assert.AreEqual(false, wordValid, "Word contains numbers!");
         }

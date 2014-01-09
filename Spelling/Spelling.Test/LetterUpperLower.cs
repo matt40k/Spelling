@@ -16,20 +16,20 @@ namespace Matt40k.Spelling.Test
     public class LetterUpperLower
     {
         [TestMethod]
-        [ExpectedException(typeof(System.ArgumentException))]
+        [ExpectedException(typeof (ArgumentException))]
         public void LetterUpperLower_InvalidLength()
         {
             string invalidLetter = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string upperLower = logic.GetCharacterUpperLowerCombined(invalidLetter);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(System.NullReferenceException))]
+        [ExpectedException(typeof (NullReferenceException))]
         public void LetterUpperLower_Null()
         {
-            Logic logic = new Logic();
+            var logic = new Logic();
             string upperLower = logic.GetCharacterUpperLowerCombined(null);
         }
 
@@ -38,7 +38,7 @@ namespace Matt40k.Spelling.Test
         {
             string validLetter = "A";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string upperLower = logic.GetCharacterUpperLowerCombined(validLetter);
             Assert.AreEqual("Aa", upperLower, "Should return Aa!");
         }
@@ -48,7 +48,7 @@ namespace Matt40k.Spelling.Test
         {
             string validLetter = "z";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string upperLower = logic.GetCharacterUpperLowerCombined(validLetter);
             Assert.AreEqual("Zz", upperLower, "Should return Zz!");
         }

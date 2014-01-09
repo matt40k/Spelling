@@ -7,7 +7,6 @@
  *   LICENSE.TXT at the root directory of the distribution.
  */
 
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Matt40k.Spelling.Test
@@ -20,7 +19,7 @@ namespace Matt40k.Spelling.Test
         {
             string validFileType = "image.png";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
             Assert.AreEqual(true, result, "Should return true, cause PNG is supported!");
         }
@@ -30,7 +29,7 @@ namespace Matt40k.Spelling.Test
         {
             string validFileType = "image.jpg";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
             Assert.AreEqual(true, result, "Should return true, cause JPG is supported!");
         }
@@ -40,7 +39,7 @@ namespace Matt40k.Spelling.Test
         {
             string validFileType = "image.bmp";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
             Assert.AreEqual(true, result, "Should return true, cause BMP is supported!");
         }
@@ -50,7 +49,7 @@ namespace Matt40k.Spelling.Test
         {
             string validFileType = "image.gif";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
             Assert.AreEqual(true, result, "Should return true, cause GIF is supported!");
         }
@@ -60,7 +59,7 @@ namespace Matt40k.Spelling.Test
         {
             string validFileType = "image.doc";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
             Assert.AreEqual(false, result, "Should return false, cause DOC is not supported!");
         }

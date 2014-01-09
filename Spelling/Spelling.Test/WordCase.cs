@@ -7,7 +7,6 @@
  *   LICENSE.TXT at the root directory of the distribution.
  */
 
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Matt40k.Spelling.Test
@@ -21,7 +20,7 @@ namespace Matt40k.Spelling.Test
             string name = "dad";
             string validName = "DAD";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string result = logic.NameToUpper(name);
             Assert.AreEqual(result, validName, "Word should be in all capitals!");
         }
@@ -32,7 +31,7 @@ namespace Matt40k.Spelling.Test
             string name = "dAd";
             string validName = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string result = logic.NameToLower(name);
             Assert.AreEqual(result, validName, "Word should be in all lower case!");
         }
@@ -43,7 +42,7 @@ namespace Matt40k.Spelling.Test
             string name = "dAd";
             string validName = "Dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string result = logic.NameToCamel(name);
             Assert.AreEqual(result, validName, "Word should be");
         }
@@ -54,7 +53,7 @@ namespace Matt40k.Spelling.Test
             string name = "dAd";
             string validName = "DAD";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             string result = logic.NameToCamel(name);
             Assert.AreNotEqual(result, validName, "Word should be");
         }

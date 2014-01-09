@@ -7,7 +7,6 @@
  *   LICENSE.TXT at the root directory of the distribution.
  */
 
-using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -19,7 +18,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void GetFolders_Valid_ReturnMagicGate()
         {
-            Logic logic = new Logic();
+            var logic = new Logic();
             List<string> result = logic.GetFolderNames;
 
             string validFolder = "The Magic Key";

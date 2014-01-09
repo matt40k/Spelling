@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
  <copyright file="setup.proj" company="Matt Smith">
    Copyright (c) 2014, Matt Smith
@@ -8,10 +8,14 @@
  </copyright>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Name="Spelling" Id="05219054-87ac-4700-9a04-ecfabe180a70" UpgradeCode="aa355ecb-60a5-464e-820e-2d3c5cbbd737" Language="1033" Codepage="1252" Version="1.0.0" Manufacturer="Matt Smith">
-    <Package Id="*" Description="Simple spelling program" Manufacturer="Matt Smith" InstallerVersion="100" Languages="1033" Compressed="yes" SummaryCodepage="1252" InstallPrivileges="elevated" InstallScope="perMachine" />
+  <Product Name="Spelling" Id="05219054-87ac-4700-9a04-ecfabe180a70" UpgradeCode="aa355ecb-60a5-464e-820e-2d3c5cbbd737"
+           Language="1033" Codepage="1252" Version="1.0.0" Manufacturer="Matt Smith">
+    <Package Id="*" Description="Simple spelling program" Manufacturer="Matt Smith" InstallerVersion="100"
+             Languages="1033" Compressed="yes" SummaryCodepage="1252" InstallPrivileges="elevated"
+             InstallScope="perMachine" />
     <Media Id="1" Cabinet="spelling.cab" EmbedCab="yes" />
-    <MajorUpgrade Schedule="afterInstallInitialize" DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit."/>
+    <MajorUpgrade Schedule="afterInstallInitialize"
+                  DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="PFiles">
         <Directory Id="INSTALLDIR" Name="Spelling">

@@ -7,7 +7,6 @@
  *   LICENSE.TXT at the root directory of the distribution.
  */
 
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Matt40k.Spelling.Test
@@ -20,7 +19,7 @@ namespace Matt40k.Spelling.Test
         {
             string name = "dad";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool _valid = logic.IsOnlyCharacters(name);
             Assert.AreEqual(true, _valid, "Word should be valid!");
         }
@@ -30,7 +29,7 @@ namespace Matt40k.Spelling.Test
         {
             string name = "dad1";
 
-            Logic logic = new Logic();
+            var logic = new Logic();
             bool _valid = logic.IsOnlyCharacters(name);
             Assert.AreEqual(false, _valid, "Word should be valid!");
         }
