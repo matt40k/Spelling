@@ -19,7 +19,7 @@ namespace Matt40k.Spelling.Test
         [ExpectedException(typeof (ArgumentException))]
         public void LetterUpperLower_InvalidLength()
         {
-            string invalidLetter = "dad";
+            const string invalidLetter = "dad";
 
             var logic = new Logic();
             string upperLower = logic.GetCharacterUpperLowerCombined(invalidLetter);
@@ -36,7 +36,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void LetterUpperLower_FromUpperA()
         {
-            string validLetter = "A";
+            const string validLetter = "A";
 
             var logic = new Logic();
             string upperLower = logic.GetCharacterUpperLowerCombined(validLetter);
@@ -46,7 +46,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void LetterUpperLower_ToLowerZ()
         {
-            string validLetter = "z";
+            const string validLetter = "z";
 
             var logic = new Logic();
             string upperLower = logic.GetCharacterUpperLowerCombined(validLetter);

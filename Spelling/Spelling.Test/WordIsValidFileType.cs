@@ -17,7 +17,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordIsValidFileType_Valid_PNG()
         {
-            string validFileType = "image.png";
+            const string validFileType = "image.png";
 
             var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
@@ -27,7 +27,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordIsValidFileType_Valid_JPG()
         {
-            string validFileType = "image.jpg";
+            const string validFileType = "image.jpg";
 
             var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
@@ -37,7 +37,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordIsValidFileType_Valid_BMP()
         {
-            string validFileType = "image.bmp";
+            const string validFileType = "image.bmp";
 
             var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
@@ -47,7 +47,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordIsValidFileType_Valid_GIF()
         {
-            string validFileType = "image.gif";
+            const string validFileType = "image.gif";
 
             var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);
@@ -57,7 +57,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordIsValidFileType_Invalid_DOC()
         {
-            string validFileType = "image.doc";
+            const string validFileType = "image.doc";
 
             var logic = new Logic();
             bool result = logic.IsValidFileType(validFileType);

@@ -17,8 +17,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordNameFromFilename_FileNameAndExtension()
         {
-            string fileName = "dad.png";
-            string validFileName = "dad";
+            const string fileName = "dad.png";
+            const string validFileName = "dad";
 
             var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);
@@ -28,8 +28,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordNameFromFilename_FileName()
         {
-            string fileName = "dad";
-            string validFileName = "dad";
+            const string fileName = "dad";
+            const string validFileName = "dad";
 
             var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);
@@ -39,8 +39,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordNameFromFilename_FileNameWithPath()
         {
-            string fileName = @"c:\tmp\dad";
-            string validFileName = "dad";
+            const string fileName = @"c:\tmp\dad";
+            const string validFileName = "dad";
 
             var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);
@@ -50,8 +50,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordNameFromFilename_FileNameWithExtensionAndPath()
         {
-            string fileName = @"c:\tmp\dad.png";
-            string validFileName = "dad";
+            const string fileName = @"c:\tmp\dad.png";
+            const string validFileName = "dad";
 
             var logic = new Logic();
             string wordFileName = logic.GetWordNameFromFilename(fileName);

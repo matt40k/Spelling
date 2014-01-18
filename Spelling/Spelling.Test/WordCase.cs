@@ -17,8 +17,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordCase_ToUpper()
         {
-            string name = "dad";
-            string validName = "DAD";
+            const string name = "dad";
+            const string validName = "DAD";
 
             var logic = new Logic();
             string result = logic.NameToUpper(name);
@@ -28,8 +28,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordCase_ToLower()
         {
-            string name = "dAd";
-            string validName = "dad";
+            const string name = "dAd";
+            const string validName = "dad";
 
             var logic = new Logic();
             string result = logic.NameToLower(name);
@@ -39,8 +39,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordCase_ToCamel()
         {
-            string name = "dAd";
-            string validName = "Dad";
+            const string name = "dAd";
+            const string validName = "Dad";
 
             var logic = new Logic();
             string result = logic.NameToCamel(name);
@@ -50,8 +50,8 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordCase_ToCamel_Failure()
         {
-            string name = "dAd";
-            string validName = "DAD";
+            const string name = "dAd";
+            const string validName = "DAD";
 
             var logic = new Logic();
             string result = logic.NameToCamel(name);

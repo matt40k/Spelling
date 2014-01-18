@@ -30,7 +30,6 @@ namespace Matt40k.Spelling
         private LetterTypes _currentLetterType = LetterTypes.Upper;
 
         private string _currentWord;
-        private string _currentWordPath;
         private int? _validMaxLength = 5;
         private string defaultSelected = "The Magic Key";
         private List<string> files = new List<string>();
@@ -180,10 +179,7 @@ namespace Matt40k.Spelling
             }
         }
 
-        public string GetWordPicturePath
-        {
-            get { return _currentWordPath; }
-        }
+        public string GetWordPicturePath { get; private set; }
 
         public BitmapImage GetWordPicture
         {
@@ -191,7 +187,7 @@ namespace Matt40k.Spelling
             {
                 var bi = new BitmapImage();
                 bi.BeginInit();
-                bi.UriSource = new Uri(_currentWordPath, UriKind.RelativeOrAbsolute);
+                bi.UriSource = new Uri(GetWordPicturePath, UriKind.RelativeOrAbsolute);
                 bi.EndInit();
                 return bi;
             }
@@ -314,7 +310,7 @@ namespace Matt40k.Spelling
             List<string> tmp = GetFiles;
             int index = rnd.Next(0, tmp.Count);
             _currentWord = GetWordNameFromFilename(tmp[index]);
-            _currentWordPath = tmp[index];
+            GetWordPicturePath = tmp[index];
             ConvertToCurrentLetterType(_currentWord);
         }
 

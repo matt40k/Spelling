@@ -17,7 +17,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordIsOnlyCharacters_IsValid()
         {
-            string name = "dad";
+            const string name = "dad";
 
             var logic = new Logic();
             bool _valid = logic.IsOnlyCharacters(name);
@@ -27,7 +27,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordIsOnlyCharacters_IsNotValid()
         {
-            string name = "dad1";
+            const string name = "dad1";
 
             var logic = new Logic();
             bool _valid = logic.IsOnlyCharacters(name);

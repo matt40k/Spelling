@@ -17,7 +17,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordValid_IsValid()
         {
-            string validWord = "dad";
+            const string validWord = "dad";
 
             var logic = new Logic();
             bool wordValid = logic.IsValidWord(validWord);
@@ -27,7 +27,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordValid_IsNotValid_TooLong()
         {
-            string invalidWord = "supercalifragilisticexpialidocious";
+            const string invalidWord = "supercalifragilisticexpialidocious";
 
             var logic = new Logic();
             bool wordValid = logic.IsValidWord(invalidWord);
@@ -37,7 +37,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordValid_IsNotValid_ContainsNumbers()
         {
-            string invalidWord = "qwe123";
+            const string invalidWord = "qwe123";
 
             var logic = new Logic();
             bool wordValid = logic.IsValidWord(invalidWord);
@@ -47,7 +47,7 @@ namespace Matt40k.Spelling.Test
         [TestMethod]
         public void WordValid_IsNotValid_ContainsSpecialCharacters()
         {
-            string invalidWord = "Sup3rM@n";
+            const string invalidWord = "Sup3rM@n";
 
             var logic = new Logic();
             bool wordValid = logic.IsValidWord(invalidWord);

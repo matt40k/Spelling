@@ -21,7 +21,7 @@ namespace Matt40k.Spelling.Test
             var logic = new Logic();
             List<string> result = logic.GetFolderNames;
 
-            string validFolder = "The Magic Key";
+            const string validFolder = "The Magic Key";
             string resultFolder = result[0];
 
             Assert.AreEqual(validFolder, resultFolder, "Should return MagicKey!");
