@@ -13,6 +13,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 
 namespace Matt40k.Spelling
@@ -92,7 +93,23 @@ namespace Matt40k.Spelling
             get
             {
                 string path = Path.Combine(getMyDocuments, _AppFolder);
-                return path;
+                if (Directory.Exists(path))
+                    return path;
+                else
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    catch (UnauthorizedAccessException GetUserStorageFolder_UnauthorizedAccessException)
+                    {
+                        MessageBox.Show(
+                            "Permission denied - unable to create 'Spelling' folder in Documents - " + getMyDocuments,
+                            "Permission denied");
+                        throw;
+                    }
+                    return path;
+                }
             }
         }
 
@@ -113,12 +130,14 @@ namespace Matt40k.Spelling
             }
         }
 
-        public bool HasOnlyOneFolder
+        public bool? HasOnlyOneFolder
         {
             get
             {
                 if (folders == null)
                     folders = new List<string>(Directory.EnumerateDirectories(GetUserStorageFolder));
+                if (folders.Count == 0)
+                    return null;
                 if (folders.Count == 1)
                 {
                     selected = folders[0];

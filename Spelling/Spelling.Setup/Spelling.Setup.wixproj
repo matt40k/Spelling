@@ -25,6 +25,7 @@
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Chain.wxs" />
     <Compile Include="Spelling.wxs" />
   </ItemGroup>
   <ItemGroup>

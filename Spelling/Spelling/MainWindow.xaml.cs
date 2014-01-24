@@ -32,19 +32,28 @@ namespace Matt40k.Spelling
 
             // Load Logic
             logic = new Logic();
-            if (logic.HasOnlyOneFolder)
-            {
-                SelectFolderUI(false);
-                logic.GetRandomWord();
-                _wordLen = logic.GetWordLength;
 
-                SetUIBoxes(_wordLen);
-                LoadWordPicture();
+            bool? hasOnlyOneFolder = logic.HasOnlyOneFolder;
+            if (!hasOnlyOneFolder.HasValue)
+            {
+                // No sub-folder in Spelling
             }
             else
             {
-                folderComboBox.ItemsSource = logic.GetFolderNames;
-                SelectFolderUI(true);
+                if ((bool)hasOnlyOneFolder)
+                {
+                    SelectFolderUI(false);
+                    logic.GetRandomWord();
+                    _wordLen = logic.GetWordLength;
+
+                    SetUIBoxes(_wordLen);
+                    LoadWordPicture();
+                }
+                else
+                {
+                    folderComboBox.ItemsSource = logic.GetFolderNames;
+                    SelectFolderUI(true);
+                }
             }
         }
 
