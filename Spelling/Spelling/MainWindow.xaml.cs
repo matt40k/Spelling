@@ -362,9 +362,7 @@ namespace Matt40k.Spelling
                 if (IsValid)
                     Letter1.Background = Brushes.Green;
                 else
-                {
                     Letter1.ClearValue(BackgroundProperty);
-                }
             }
 
             if (len >= 2)
@@ -373,9 +371,14 @@ namespace Matt40k.Spelling
                 string letter = Letter2.Text;
                 bool IsValid = logic.IsLetterCorrect(letter, 2);
                 if (IsValid)
+                {
                     Letter2.Background = Brushes.Green;
+
+                }
                 else
+                {
                     Letter2.ClearValue(BackgroundProperty);
+                }
             }
             if (len >= 3)
             {
@@ -476,6 +479,87 @@ namespace Matt40k.Spelling
                     Letter12.Background = Brushes.Green;
                 else
                     Letter12.ClearValue(BackgroundProperty);
+            }
+
+            // Move selected textbox to the next one if the current one is correct.
+            int nextLetter = GetNextLetter;
+            if (nextLetter == 100)
+            {
+                
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private int GetNextLetter
+        {
+            get
+            {
+                int len = _wordLen;
+                if (Letter1.Background != Brushes.Green && len >= 1)
+                {
+                    Letter1.Focus();
+                    return 1;
+                }
+                if (Letter2.Background != Brushes.Green && len >= 2)
+                {
+                    Letter2.Focus();
+                    return 2;
+                }
+                if (Letter3.Background != Brushes.Green && len >= 3)
+                {
+                    Letter3.Focus();
+                    return 3;
+                }
+                if (Letter4.Background != Brushes.Green && len >= 4)
+                {
+                    Letter4.Focus();
+                    return 4;
+                }
+                if (Letter5.Background != Brushes.Green && len >= 5)
+                {
+                    Letter5.Focus();
+                    return 5;
+                }
+                if (Letter6.Background != Brushes.Green && len >= 6)
+                {
+                    Letter6.Focus();
+                    return 6;
+                }
+                if (Letter7.Background != Brushes.Green && len >= 7)
+                {
+                    Letter7.Focus();
+                    return 7;
+                }
+                if (Letter8.Background != Brushes.Green && len >= 8)
+                {
+                    Letter8.Focus();
+                    return 8;
+                }
+
+                if (Letter9.Background != Brushes.Green && len >= 9)
+                {
+                    Letter9.Focus();
+                    return 9;
+                }
+                if (Letter10.Background != Brushes.Green && len >= 10)
+                {
+                    Letter10.Focus();
+                    return 10;
+                }
+                if (Letter11.Background != Brushes.Green && len >= 11)
+                {
+                    Letter11.Focus();
+                    return 11;
+                }
+                if (Letter12.Background != Brushes.Green && len >= 12)
+                {
+                    Letter12.Focus();
+                    return 12;
+                }
+
+                return 100;
             }
         }
 
