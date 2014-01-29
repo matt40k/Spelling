@@ -20,6 +20,13 @@ namespace Matt40k.Spelling
 {
     public class Logic
     {
+        private Log log;
+
+        public Logic()
+        {
+            log = new Log();
+        }
+
         public enum LetterTypes
         {
             Lower,
