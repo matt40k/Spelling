@@ -14,7 +14,7 @@
 
 /*****************************************************************************/
 /* Project  : FireWorksSimulator                                             */
-/* File     : FireWrksParticle.cs                                            */
+/* File     : FireworksParticle.cs                                            */
 /* Version  : 1                                                              */
 /* Language : C#                                                             */
 /* Summary  : The object represents a fireworks particle inherited from the  */
@@ -27,9 +27,9 @@
 
 using System.Drawing;
 
-namespace Spelling.Fireworks
+namespace Matt40k.Spelling.Fireworks
 {
-    class FireworksParticle : Particle
+    public class FireworksParticle : Particle
     {
         /*****************************************
         *                Fields                  *
@@ -73,8 +73,8 @@ namespace Spelling.Fireworks
         /// Update the characteristics of the particle
         /// </summary>
         /// <param name="fdeltaTime">Delta time between two updates (seconds)</param>
-        /// <returns>The position vector of the fireWrks particle</returns>
-        public PositionVector UpdateFireWrksParticle(float fdeltaTime)
+        /// <returns>The position vector of the fireworks particle</returns>
+        public PositionVector UpdateFireworksParticle(float fdeltaTime)
         {
             if (iCurrentCycle <= iNbCycle)
             {

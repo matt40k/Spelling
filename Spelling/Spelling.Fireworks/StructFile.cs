@@ -22,9 +22,9 @@
 /* History  :                                                                */
 /*****************************************************************************/
 
-namespace Spelling.Fireworks
+namespace Matt40k.Spelling.Fireworks
 {
-    struct PositionVector
+    public struct PositionVector
     {
         public PositionVector(float x, float y)
         {
@@ -35,7 +35,7 @@ namespace Spelling.Fireworks
         public float yPosition;
     }
 
-    struct SpeedVector
+    public struct SpeedVector
     {
         public SpeedVector(float x, float y)
         {
@@ -46,7 +46,7 @@ namespace Spelling.Fireworks
         public float ySpeed;
     }
 
-    struct AccelerationVector
+    public struct AccelerationVector
     {
         public AccelerationVector(float x, float y)
         {
@@ -57,7 +57,7 @@ namespace Spelling.Fireworks
         public float yAcceleration;
     }
 
-    struct ForceVector
+    public struct ForceVector
     {
         public ForceVector(float x, float y)
         {

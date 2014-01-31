@@ -26,9 +26,9 @@
 
 using System.Collections.Generic;
 
-namespace Spelling.Fireworks
+namespace Matt40k.Spelling.Fireworks
 {
-    class Particle
+    public class Particle
     {
         /*****************************************
 *                Fields                  *

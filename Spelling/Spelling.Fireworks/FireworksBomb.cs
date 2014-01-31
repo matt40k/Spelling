@@ -29,9 +29,9 @@ using System;
 using System.Drawing;
 using System.Collections.Generic;
 
-namespace Spelling.Fireworks
+namespace Matt40k.Spelling.Fireworks
 {
-    class FireworksBomb
+    public class FireworksBomb
     {
         /*****************************************
         *                Fields                  *
