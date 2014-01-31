@@ -1,6 +1,13 @@
-﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
+﻿/*
+ *   Developer : Matt Smith (matt@matt40k.co.uk)
+ *   All code (c) Matthew Smith all rights reserved
+ * 
+ *   This software is released under Microsoft Reciprocal License (MS-RL).
+ *   The license and further copyright text can be found in the file
+ *   LICENSE.TXT at the root directory of the distribution.
+ */
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -12,7 +19,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Spelling")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © Matt Smith 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +58,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]

@@ -8,8 +8,8 @@
  </copyright>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Name="Spelling" Id="05219054-87ac-4700-9a04-ecfabe180a70" UpgradeCode="aa355ecb-60a5-464e-820e-2d3c5cbbd737"
-           Language="1033" Codepage="1252" Version="1.0.0" Manufacturer="Matt Smith">
+  <Product Name="Spelling" Id="*" UpgradeCode="aa355ecb-60a5-464e-820e-2d3c5cbbd737"
+           Language="1033" Codepage="1252" Version="1.1.0" Manufacturer="Matt Smith">
     <Package Id="*" Description="Simple spelling program" Manufacturer="Matt Smith" InstallerVersion="100"
              Languages="1033" Compressed="yes" SummaryCodepage="1252" InstallPrivileges="elevated"
              InstallScope="perMachine" />

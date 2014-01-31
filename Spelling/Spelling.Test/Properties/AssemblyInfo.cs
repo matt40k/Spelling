@@ -1,5 +1,13 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿/*
+ *   Developer : Matt Smith (matt@matt40k.co.uk)
+ *   All code (c) Matthew Smith all rights reserved
+ * 
+ *   This software is released under Microsoft Reciprocal License (MS-RL).
+ *   The license and further copyright text can be found in the file
+ *   LICENSE.TXT at the root directory of the distribution.
+ */
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -19,9 +27,6 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4bfb8d82-422b-4cb6-85c1-bb837b997500")]
-
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
@@ -32,5 +37,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]

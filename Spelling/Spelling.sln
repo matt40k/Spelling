@@ -18,9 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spelling.Documentation", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FA602F44-337A-4CC0-BF79-08281A55CE8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spelling.Fireworks", "Spelling.Fireworks\Spelling.Fireworks.csproj", "{ADE4689B-DC9A-48B2-A700-6E699D91EA32}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
+		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs17
 		SccLocalPath0 = .
@@ -36,6 +38,9 @@ Global
 		SccProjectUniqueName4 = Spelling.Setup\\Spelling.Setup.wixproj
 		SccProjectName4 = Spelling.Setup
 		SccLocalPath4 = Spelling.Setup
+		SccProjectUniqueName5 = Spelling.Fireworks\\Spelling.Fireworks.csproj
+		SccProjectName5 = Spelling.Fireworks
+		SccLocalPath5 = Spelling.Fireworks
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +91,16 @@ Global
 		{B53BFCFC-7505-4CD2-9CE6-26E3AA7A8AB5}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B53BFCFC-7505-4CD2-9CE6-26E3AA7A8AB5}.Release|x86.ActiveCfg = Release|x86
 		{B53BFCFC-7505-4CD2-9CE6-26E3AA7A8AB5}.Release|x86.Build.0 = Release|x86
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ADE4689B-DC9A-48B2-A700-6E699D91EA32}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
