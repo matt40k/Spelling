@@ -49,6 +49,7 @@ namespace Matt40k.Spelling.Fireworks
         public ColorButtonControl()
         {
             InitializeComponent();
+            this.btSelectColorButton = new Button();
             btSelectColorButton.BackColor = cSelctedColor;
         }
 

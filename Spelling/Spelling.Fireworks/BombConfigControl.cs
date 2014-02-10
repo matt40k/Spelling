@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace Matt40k.Spelling.Fireworks
 {
-    public partial class BombConfigControl : UserControl
+    public class BombConfigControl : UserControl
     {
         /*****************************************
         *                Fields                  *
@@ -181,7 +181,10 @@ namespace Matt40k.Spelling.Fireworks
         /// </summary>
         private void InitializeComponent()
         {
-
+            this.btColorButton = new ColorButtonControl();
+            this.udLauchSpeed = new System.Windows.Forms.NumericUpDown();
+            this.udExlposeSpeed = new System.Windows.Forms.NumericUpDown();
+            this.udExploseForm = new System.Windows.Forms.NumericUpDown();
         }
 
         private System.Windows.Forms.NumericUpDown udLauchSpeed;

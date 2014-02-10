@@ -25,6 +25,19 @@ namespace Matt40k.Spelling
         private readonly Thickness tbNoneThickness = new Thickness(0, 0, 0, 0);
         private readonly Thickness tbThickness = new Thickness(0, 0, 25, 0);
 
+        private SimulatorControl simulatorControl;
+        private int masterTimerPeriod = 50;
+        private BombConfigControl bombConfigControl4;
+        private BombConfigControl bombConfigControl3;
+        private BombConfigControl bombConfigControl2;
+        private BombConfigControl bombConfigControl1;
+        private BombConfigControl bombConfigControl9;
+        private BombConfigControl bombConfigControl8;
+        private BombConfigControl bombConfigControl7;
+        private BombConfigControl bombConfigControl6;
+        private BombConfigControl bombConfigControl5;
+        private BombConfigControl bombConfigControl10;
+
         private int _wordLen = 8;
 
         public MainWindow()
@@ -49,6 +62,8 @@ namespace Matt40k.Spelling
 
                     SetUIBoxes(_wordLen);
                     LoadWordPicture();
+
+                    LoadFire();
                 }
                 else
                 {
@@ -590,6 +605,21 @@ namespace Matt40k.Spelling
 
         private void LoadFire()
         {
+            //
+            //
+            //
+            this.bombConfigControl10 = new Fireworks.BombConfigControl();
+            this.bombConfigControl9 = new Fireworks.BombConfigControl();
+            this.bombConfigControl8 = new Fireworks.BombConfigControl();
+            this.bombConfigControl7 = new Fireworks.BombConfigControl();
+            this.bombConfigControl6 = new Fireworks.BombConfigControl();
+            this.bombConfigControl5 = new Fireworks.BombConfigControl();
+            this.bombConfigControl4 = new Fireworks.BombConfigControl();
+            this.bombConfigControl3 = new Fireworks.BombConfigControl();
+            this.bombConfigControl2 = new Fireworks.BombConfigControl();
+            this.bombConfigControl1 = new Fireworks.BombConfigControl();
+
+
             // 
             // bombConfigControl10
             // 
@@ -695,16 +725,82 @@ namespace Matt40k.Spelling
             //
             //
             //
-            this.bombConfigControl10 = new Fireworks.BombConfigControl();
-            this.bombConfigControl9 = new Fireworks.BombConfigControl();
-            this.bombConfigControl8 = new Fireworks.BombConfigControl();
-            this.bombConfigControl7 = new Fireworks.BombConfigControl();
-            this.bombConfigControl6 = new Fireworks.BombConfigControl();
-            this.bombConfigControl5 = new Fireworks.BombConfigControl();
-            this.bombConfigControl4 = new Fireworks.BombConfigControl();
-            this.bombConfigControl3 = new Fireworks.BombConfigControl();
-            this.bombConfigControl2 = new Fireworks.BombConfigControl();
-            this.bombConfigControl1 = new Fireworks.BombConfigControl();
+
+            // Init launcher #01
+            //bombConfigControl1.SetFireButtonText("Fire! (F1)");
+            bombConfigControl1.SetBombColor(System.Drawing.Color.Blue);
+            bombConfigControl1.SetLaunchSpeed(15);
+            bombConfigControl1.SetExploseSpeed(10);
+            bombConfigControl1.SetExploseForm(1);
+
+            // Init launcher #02
+            //bombConfigControl2.SetFireButtonText("Fire! (F2)");
+            bombConfigControl2.SetBombColor(System.Drawing.Color.WhiteSmoke);
+            bombConfigControl2.SetLaunchSpeed(20);
+            bombConfigControl2.SetExploseSpeed(10);
+            bombConfigControl2.SetExploseForm(1);
+
+            // Init launcher #03
+            //bombConfigControl3.SetFireButtonText("Fire! (F3)");
+            bombConfigControl3.SetBombColor(System.Drawing.Color.Red);
+            bombConfigControl3.SetLaunchSpeed(25);
+            bombConfigControl3.SetExploseSpeed(10);
+            bombConfigControl3.SetExploseForm(1);
+
+            // Init launcher #04
+            //bombConfigControl4.SetFireButtonText("Fire! (F4)");
+            bombConfigControl4.SetBombColor(System.Drawing.Color.Green);
+            bombConfigControl4.SetLaunchSpeed(20);
+            bombConfigControl4.SetExploseSpeed(10);
+            bombConfigControl4.SetExploseForm(1);
+
+            // Init launcher #05
+            //bombConfigControl5.SetFireButtonText("Fire! (F5)");
+            bombConfigControl5.SetBombColor(System.Drawing.Color.Pink);
+            bombConfigControl5.SetLaunchSpeed(15);
+            bombConfigControl5.SetExploseSpeed(10);
+            bombConfigControl5.SetExploseForm(1);
+
+            // Init launcher #06
+            //bombConfigControl6.SetFireButtonText("Fire! (F6)");
+            bombConfigControl6.SetBombColor(System.Drawing.Color.LightSkyBlue);
+            bombConfigControl6.SetLaunchSpeed(20);
+            bombConfigControl6.SetExploseSpeed(10);
+            bombConfigControl6.SetExploseForm(1);
+
+            // Init launcher #07
+            //bombConfigControl7.SetFireButtonText("Fire! (F7)");
+            bombConfigControl7.SetBombColor(System.Drawing.Color.Yellow);
+            bombConfigControl7.SetLaunchSpeed(25);
+            bombConfigControl7.SetExploseSpeed(10);
+            bombConfigControl7.SetExploseForm(1);
+
+            // Init launcher #08
+            //bombConfigControl8.SetFireButtonText("Fire! (F8)");
+            bombConfigControl8.SetBombColor(System.Drawing.Color.Fuchsia);
+            bombConfigControl8.SetLaunchSpeed(20);
+            bombConfigControl8.SetExploseSpeed(10);
+            bombConfigControl8.SetExploseForm(1);
+
+            // Init launcher #09
+            //bombConfigControl9.SetFireButtonText("Fire! (F9)");
+            bombConfigControl9.SetBombColor(System.Drawing.Color.LimeGreen);
+            bombConfigControl9.SetLaunchSpeed(15);
+            bombConfigControl9.SetExploseSpeed(10);
+            bombConfigControl9.SetExploseForm(1);
+
+            // Init launcher #10
+            //bombConfigControl10.SetFireButtonText("Fire! (F10)");
+            bombConfigControl10.SetBombColor(System.Drawing.Color.Thistle);
+            bombConfigControl10.SetLaunchSpeed(20);
+            bombConfigControl10.SetExploseSpeed(10);
+            bombConfigControl10.SetExploseForm(1);
+
+            // Replace bombs launcher
+            //ReplaceLaunchers();
+
+            // Start simulation
+            //Start();
         }
 
         private void bombConfigControl1_FireButtonPressed(object sender, System.EventArgs e)
