@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Matt40k.Spelling.Fireworks;
 
 namespace Matt40k.Spelling
 {
@@ -589,6 +590,111 @@ namespace Matt40k.Spelling
 
         private void LoadFire()
         {
+            // 
+            // bombConfigControl10
+            // 
+            this.bombConfigControl10.BackColor = System.Drawing.Color.DimGray;
+            this.bombConfigControl10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl10.Location = new System.Drawing.Point(957, 6);
+            this.bombConfigControl10.Name = "bombConfigControl10";
+            this.bombConfigControl10.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl10.TabIndex = 8;
+            this.bombConfigControl10.FireButtonPressed += new System.EventHandler(this.bombConfigControl10_FireButtonPressed);
+            // 
+            // bombConfigControl9
+            // 
+            this.bombConfigControl9.BackColor = System.Drawing.Color.Silver;
+            this.bombConfigControl9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl9.Location = new System.Drawing.Point(851, 6);
+            this.bombConfigControl9.Name = "bombConfigControl9";
+            this.bombConfigControl9.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl9.TabIndex = 7;
+            this.bombConfigControl9.FireButtonPressed += new System.EventHandler(this.bombConfigControl9_FireButtonPressed);
+            // 
+            // bombConfigControl8
+            // 
+            this.bombConfigControl8.BackColor = System.Drawing.Color.Gray;
+            this.bombConfigControl8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl8.Location = new System.Drawing.Point(745, 6);
+            this.bombConfigControl8.Name = "bombConfigControl8";
+            this.bombConfigControl8.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl8.TabIndex = 5;
+            this.bombConfigControl8.FireButtonPressed += new System.EventHandler(this.bombConfigControl8_FireButtonPressed);
+            // 
+            // bombConfigControl7
+            // 
+            this.bombConfigControl7.BackColor = System.Drawing.Color.Silver;
+            this.bombConfigControl7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl7.Location = new System.Drawing.Point(639, 6);
+            this.bombConfigControl7.Name = "bombConfigControl7";
+            this.bombConfigControl7.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl7.TabIndex = 6;
+            this.bombConfigControl7.FireButtonPressed += new System.EventHandler(this.bombConfigControl7_FireButtonPressed);
+            // 
+            // bombConfigControl6
+            // 
+            this.bombConfigControl6.BackColor = System.Drawing.Color.Gray;
+            this.bombConfigControl6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl6.Location = new System.Drawing.Point(533, 6);
+            this.bombConfigControl6.Name = "bombConfigControl6";
+            this.bombConfigControl6.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl6.TabIndex = 5;
+            this.bombConfigControl6.FireButtonPressed += new System.EventHandler(this.bombConfigControl6_FireButtonPressed);
+            // 
+            // bombConfigControl5
+            // 
+            this.bombConfigControl5.BackColor = System.Drawing.Color.Silver;
+            this.bombConfigControl5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl5.Location = new System.Drawing.Point(427, 6);
+            this.bombConfigControl5.Name = "bombConfigControl5";
+            this.bombConfigControl5.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl5.TabIndex = 4;
+            this.bombConfigControl5.FireButtonPressed += new System.EventHandler(this.bombConfigControl5_FireButtonPressed);
+            // 
+            // bombConfigControl4
+            // 
+            this.bombConfigControl4.BackColor = System.Drawing.Color.Gray;
+            this.bombConfigControl4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl4.Location = new System.Drawing.Point(321, 6);
+            this.bombConfigControl4.Name = "bombConfigControl4";
+            this.bombConfigControl4.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl4.TabIndex = 3;
+            this.bombConfigControl4.FireButtonPressed += new System.EventHandler(this.bombConfigControl4_FireButtonPressed);
+            // 
+            // bombConfigControl3
+            // 
+            this.bombConfigControl3.BackColor = System.Drawing.Color.Silver;
+            this.bombConfigControl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl3.Location = new System.Drawing.Point(215, 6);
+            this.bombConfigControl3.Name = "bombConfigControl3";
+            this.bombConfigControl3.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl3.TabIndex = 2;
+            this.bombConfigControl3.FireButtonPressed += new System.EventHandler(this.bombConfigControl3_FireButtonPressed);
+            // 
+            // bombConfigControl2
+            // 
+            this.bombConfigControl2.BackColor = System.Drawing.Color.Gray;
+            this.bombConfigControl2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl2.Location = new System.Drawing.Point(109, 6);
+            this.bombConfigControl2.Name = "bombConfigControl2";
+            this.bombConfigControl2.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl2.TabIndex = 1;
+            this.bombConfigControl2.FireButtonPressed += new System.EventHandler(this.bombConfigControl2_FireButtonPressed);
+            // 
+            // bombConfigControl1
+            // 
+            this.bombConfigControl1.BackColor = System.Drawing.Color.Silver;
+            this.bombConfigControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bombConfigControl1.Location = new System.Drawing.Point(3, 6);
+            this.bombConfigControl1.Name = "bombConfigControl1";
+            this.bombConfigControl1.Size = new System.Drawing.Size(100, 182);
+            this.bombConfigControl1.TabIndex = 0;
+            this.bombConfigControl1.FireButtonPressed += new System.EventHandler(this.bombConfigControl1_FireButtonPressed);
+
+
+            //
+            //
+            //
             this.bombConfigControl10 = new Fireworks.BombConfigControl();
             this.bombConfigControl9 = new Fireworks.BombConfigControl();
             this.bombConfigControl8 = new Fireworks.BombConfigControl();
@@ -599,6 +705,146 @@ namespace Matt40k.Spelling
             this.bombConfigControl3 = new Fireworks.BombConfigControl();
             this.bombConfigControl2 = new Fireworks.BombConfigControl();
             this.bombConfigControl1 = new Fireworks.BombConfigControl();
+        }
+
+        private void bombConfigControl1_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_1();
+        }
+
+        private void bombConfigControl2_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_2();
+        }
+
+        private void bombConfigControl3_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_3();
+        }
+
+        private void bombConfigControl4_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_4();
+        }
+
+        private void bombConfigControl5_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_5();
+        }
+
+        private void bombConfigControl6_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_6();
+        }
+
+        private void bombConfigControl7_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_7();
+        }
+
+        private void bombConfigControl8_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_8();
+        }
+
+        private void bombConfigControl9_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_9();
+        }
+
+        private void bombConfigControl10_FireButtonPressed(object sender, System.EventArgs e)
+        {
+            LaunchBomb_10();
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #01
+        /// </summary>
+        private void LaunchBomb_1()
+        {
+            FireworksBomb myBomb = new FireworksBomb(5, bombConfigControl1.GetBombColor(), bombConfigControl1.GetLaunchSpeed(), bombConfigControl1.GetExploseSpeed(), bombConfigControl1.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #02
+        /// </summary>
+        private void LaunchBomb_2()
+        {
+            FireworksBomb myBomb = new FireworksBomb(15, bombConfigControl2.GetBombColor(), bombConfigControl2.GetLaunchSpeed(), bombConfigControl2.GetExploseSpeed(), bombConfigControl2.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #03
+        /// </summary>
+        private void LaunchBomb_3()
+        {
+            FireworksBomb myBomb = new FireworksBomb(25, bombConfigControl3.GetBombColor(), bombConfigControl3.GetLaunchSpeed(), bombConfigControl3.GetExploseSpeed(), bombConfigControl3.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #04
+        /// </summary>
+        private void LaunchBomb_4()
+        {
+            FireworksBomb myBomb = new FireworksBomb(35, bombConfigControl4.GetBombColor(), bombConfigControl4.GetLaunchSpeed(), bombConfigControl4.GetExploseSpeed(), bombConfigControl4.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #05
+        /// </summary>
+        private void LaunchBomb_5()
+        {
+            FireworksBomb myBomb = new FireworksBomb(45, bombConfigControl5.GetBombColor(), bombConfigControl5.GetLaunchSpeed(), bombConfigControl5.GetExploseSpeed(), bombConfigControl5.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #06
+        /// </summary>
+        private void LaunchBomb_6()
+        {
+            FireworksBomb myBomb = new FireworksBomb(55, bombConfigControl6.GetBombColor(), bombConfigControl6.GetLaunchSpeed(), bombConfigControl6.GetExploseSpeed(), bombConfigControl6.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #07
+        /// </summary>
+        private void LaunchBomb_7()
+        {
+            FireworksBomb myBomb = new FireworksBomb(65, bombConfigControl7.GetBombColor(), bombConfigControl7.GetLaunchSpeed(), bombConfigControl7.GetExploseSpeed(), bombConfigControl7.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #08
+        /// </summary>
+        private void LaunchBomb_8()
+        {
+            FireworksBomb myBomb = new FireworksBomb(75, bombConfigControl8.GetBombColor(), bombConfigControl8.GetLaunchSpeed(), bombConfigControl8.GetExploseSpeed(), bombConfigControl8.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #09
+        /// </summary>
+        private void LaunchBomb_9()
+        {
+            FireworksBomb myBomb = new FireworksBomb(85, bombConfigControl9.GetBombColor(), bombConfigControl9.GetLaunchSpeed(), bombConfigControl9.GetExploseSpeed(), bombConfigControl9.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
+        }
+
+        /// <summary>
+        /// Launch a bomb on launcher #10
+        /// </summary>
+        private void LaunchBomb_10()
+        {
+            FireworksBomb myBomb = new FireworksBomb(95, bombConfigControl10.GetBombColor(), bombConfigControl10.GetLaunchSpeed(), bombConfigControl10.GetExploseSpeed(), bombConfigControl10.GetExploseForm(), (float)(masterTimerPeriod) / 1000);
+            simulatorControl.AddBomb(myBomb);
         }
     }
 }
