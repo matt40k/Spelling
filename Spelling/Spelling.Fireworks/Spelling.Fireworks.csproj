@@ -43,6 +43,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BombConfigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FireworksBomb.cs" />
     <Compile Include="FireworksParticle.cs" />
     <Compile Include="Particle.cs" />

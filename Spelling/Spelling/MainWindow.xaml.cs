@@ -586,5 +586,19 @@ namespace Matt40k.Spelling
         {
             logic.SetSelectedFolder = folderComboBox.SelectedValue.ToString();
         }
+
+        private void LoadFire()
+        {
+            this.bombConfigControl10 = new Fireworks.BombConfigControl();
+            this.bombConfigControl9 = new Fireworks.BombConfigControl();
+            this.bombConfigControl8 = new Fireworks.BombConfigControl();
+            this.bombConfigControl7 = new Fireworks.BombConfigControl();
+            this.bombConfigControl6 = new Fireworks.BombConfigControl();
+            this.bombConfigControl5 = new Fireworks.BombConfigControl();
+            this.bombConfigControl4 = new Fireworks.BombConfigControl();
+            this.bombConfigControl3 = new Fireworks.BombConfigControl();
+            this.bombConfigControl2 = new Fireworks.BombConfigControl();
+            this.bombConfigControl1 = new Fireworks.BombConfigControl();
+        }
     }
 }

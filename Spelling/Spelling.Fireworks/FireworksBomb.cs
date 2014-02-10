@@ -13,7 +13,8 @@
  */
 
 /*****************************************************************************/
-/* Project  : FireWorksSimulator                                             */
+/* Project  : 
+ * */
 /* File     : FireWrksBomb.cs                                                */
 /* Version  : 1                                                              */
 /* Language : C#                                                             */
@@ -103,7 +104,7 @@ namespace Matt40k.Spelling.Fireworks
             if (fpLauncherParticule.IsParticleApogee() == false)
             {
                 // Only updates the launch particle before its apogee
-                fpLauncherParticule.UpdateFireWrksParticle(fdeltaTime);
+                fpLauncherParticule.UpdateFireworksParticle(fdeltaTime);
             }
             else
             {
@@ -118,11 +119,11 @@ namespace Matt40k.Spelling.Fireworks
                 // Classical update
                 foreach (FireworksParticle fpFireParticule in ltBombParticulesList)
                 {
-                    fpFireParticule.UpdateFireWrksParticle(fdeltaTime);
+                    fpFireParticule.UpdateFireworksParticle(fdeltaTime);
                 }
 
                 // Detect the finish of the explosion
-                bIsBombAlive = ltBombParticulesList[0].GetFireWrksParticuleIsAlive();
+                bIsBombAlive = ltBombParticulesList[0].GetFireworksParticuleIsAlive();
             }
 
             return bIsBombAlive;

@@ -104,7 +104,7 @@ namespace Matt40k.Spelling.Fireworks
         /// Get the colour of the FireWrks particle
         /// </summary>
         /// <returns>The colour of the FireWrks particle</returns>
-        public Color GetFireWrksParticuleColor()
+        public Color GetFireworksParticuleColor()
         {
             return cCurrentColor;
         }
@@ -113,7 +113,7 @@ namespace Matt40k.Spelling.Fireworks
         /// Get the size of the FireWrks particle
         /// </summary>
         /// <returns>The size of the FireWrks particle</returns>
-        public int GetFireWrksParticuleSize()
+        public int GetFireworksParticuleSize()
         {
             return iCurrentSize;
         }
@@ -122,7 +122,7 @@ namespace Matt40k.Spelling.Fireworks
         /// Get the base colour of the FireWrks particle
         /// </summary>
         /// <returns>The init colour of the FireWrks particle</returns>
-        public Color GetFireWrksParticuleInitColor()
+        public Color GetFireworksParticuleInitColor()
         {
             return cInitColor;
         }
@@ -131,7 +131,7 @@ namespace Matt40k.Spelling.Fireworks
         /// Get the IsAlive flag of the FireWrks particle
         /// </summary>
         /// <returns>The IsAlive flag of the FireWrks particle</returns>
-        public bool GetFireWrksParticuleIsAlive()
+        public bool GetFireworksParticuleIsAlive()
         {
             return bIsAlive;
         }
