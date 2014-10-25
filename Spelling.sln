@@ -21,27 +21,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spelling.Fireworks", "Spelling.Fireworks\Spelling.Fireworks.csproj", "{ADE4689B-DC9A-48B2-A700-6E699D91EA32}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs17
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Spelling.Logic\\Spelling.Logic.csproj
-		SccProjectName1 = Spelling.Logic
-		SccLocalPath1 = Spelling.Logic
-		SccProjectUniqueName2 = Spelling.Test\\Spelling.Test.csproj
-		SccProjectName2 = Spelling.Test
-		SccLocalPath2 = Spelling.Test
-		SccProjectUniqueName3 = Spelling\\Spelling.csproj
-		SccProjectName3 = Spelling
-		SccLocalPath3 = Spelling
-		SccProjectUniqueName4 = Spelling.Setup\\Spelling.Setup.wixproj
-		SccProjectName4 = Spelling.Setup
-		SccLocalPath4 = Spelling.Setup
-		SccProjectUniqueName5 = Spelling.Fireworks\\Spelling.Fireworks.csproj
-		SccProjectName5 = Spelling.Fireworks
-		SccLocalPath5 = Spelling.Fireworks
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
